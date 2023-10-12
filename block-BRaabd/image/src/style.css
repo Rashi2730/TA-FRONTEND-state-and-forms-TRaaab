@@ -129,7 +129,7 @@ table {
 
 /*buttons*/
 
-button {
+.button {
   width: 100px;
   height: 40px;
   border: 2px solid red;
@@ -137,6 +137,7 @@ button {
   background-color: white;
   font-weight: 500;
   font-size: 1rem;
+  text-transform: capitalize;
 }
 
 center {
@@ -145,4 +146,8 @@ center {
 
 h1 {
   font-size: 2rem;
+}
+
+img {
+  width: 100%;
 }

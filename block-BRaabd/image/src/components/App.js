@@ -4,26 +4,32 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      src: <source />,
+      active: 'basketball',
     };
   }
-  handleBasket = () => {
-    this.setState({
-      src: '../assets./basketball.jpg',
-    });
-  };
   render() {
+    let labels = ['basketball', 'cricket', 'laptop', 'phone', 'tiger'];
     return (
-      <center>
-        <h1>Image UI App</h1>
-        <button onClick={this.handleBasket}>Basketball</button>
-        {/* <button onClick={handleBasket()}>Cricket</button>
-        <button onClick={handleBasket()}>Laptop</button>
-        <button onClick={handleBasket()}>Phone</button>
-        <button onClick={handleBasket()}>PubG</button>
-        <button onClick={handleBasket()}>Tiger</button> */}
-        <img src="this.state.src" alt="" />
-      </center>
+      <>
+        <div>
+          {labels.map((label) => (
+            <button
+              className="button"
+              onClick={() => {
+                this.setState({
+                  active: label,
+                });
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        <img
+          src={`./images/${this.state.active}.jpg`}
+          alt={this.state.active}
+        />
+      </>
     );
   }
 }
